@@ -1,0 +1,44 @@
+<h1 style="text-align:center;margin:10px">Ma ToDo List</h1>
+
+<div style="display:flex; align-items:center; justify-content:center;margin:10px">
+    <input style="width:400px" type="text" matInput placeholder="Ajoute une nouvelle tâche..." [formControl]="todoForm" (keypress)="onSendMessage($event)">
+    <button mat-raised-button color="primary" style="margin-left:10px" (click)="onAdd()">Ajouter</button>
+</div>
+
+<div class="container-fluid">
+    <div class="row" style="color:blueviolet">
+
+        <div class="col-md-8" >
+            <p>Description de la tâche</p>
+        </div>
+
+        <div class="col-md-2">
+            <p>Editer</p>
+        </div>
+
+        <div class="col-md-2">
+            <p>Supprimer</p>
+        </div>
+
+    </div>
+
+    <div *ngFor="let item of taches">
+        <div class="row">
+
+            <div class="col-md-8">
+                <div>
+                    {{item.description}}
+                </div>
+            </div>
+
+            <div class="col-md-2"  style="margin-bottom:10px">
+                <button mat-raised-button color="primary" (click)="openModalEditTodo(item)">Editer</button>
+            </div>
+
+            <div class="col-md-2">
+                <button mat-raised-button color="primary" (click)="onRemoveTodo(item)">Supprimer</button>
+            </div>
+
+        </div>
+    </div>
+</div>

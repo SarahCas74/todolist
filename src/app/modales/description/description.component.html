@@ -1,0 +1,10 @@
+<h2>Edit Todo</h2>
+
+<div>
+    <input style="width:400px" type="text" matInput [formControl]="todoUpdated"> 
+</div>
+
+<div style="display:flex; align-items:center; justify-content:center">
+    <div><button mat-raised-button color="primary" (click)="onEdit(data)">Edit</button> </div>
+    <div style="margin-left:10px"><button mat-raised-button color="primary" (click)="closeModal()">Close</button></div>
+</div>
